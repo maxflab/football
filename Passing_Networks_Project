@@ -93,13 +93,12 @@ for i,ax in zip(range(len(masks_names)),axs['pitch'].flat[:len(masks_names)]):
     nominator = (max_no - no_passes["pass_count"]).sum()
     #calculate the centralisation index
     centralisation_index = nominator/denominator    
-    s = "Centralisation index is : " + str(centralisation_index)
+    s = "Centralisation : C = " + str(round(centralisation_index*100,2)) + " %"
     ax.text(60, 87, s,
        ha='center', va='center', fontsize=12, color='white', backgroundcolor = 'red')
 
 
 axs['title'].text(0.5, 0.5, 'England passing network against Sweden', ha='center', va='center', fontsize=30, fontweight='heavy')
+resolution_value = 600
+plt.savefig("myImage.png", format="png", dpi=resolution_value)
 plt.show()
-
-
-
